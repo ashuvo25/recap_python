@@ -1,0 +1,27 @@
+Docker list  
+    - docker ps
+   Docker active container
+      -docker ps -a(docker process state all)
+
+Remove Docker container permanently
+    -docker rm container_name 
+    like 
+    -docker rm ubuntu
+Docker list of images
+    -docker images
+
+Docker pull
+    -docker pull any_image name exist in docker hub
+    example 
+    -docker pull ubuntu
+
+Docker run
+    -docker run ubuntu
+    docker run ,run the specific docker image  , if it is not exist in locally it will pull it and then run it
+    -docker run -d  kodekloud/simple-webapp , -d for run docker container in background
+
+Docker execure command
+    -docker exec __names___ cat /etc/host
+
+Docker attach and detach
+    -docker attach container_id
