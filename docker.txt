@@ -25,3 +25,23 @@ Docker execure command
 
 Docker attach and detach
     -docker attach container_id
+
+
+
+Docker run
+    - docker run something
+    -docker run redis/simple-prompt-docker
+        --it print what ever the container need to print
+    -docker run -i redis/simple-prompt-docker
+        --took input before print what ever the container need to print
+        example: input:shuvo
+                 output: Hello and Welcom shuvo
+    -docker run -it redis/simple-prompt-docker
+        --took input before print what ever the container need to print{-it means interactive input }
+        example: input:Welcom! please enter your name  : shuvo
+                 output: Hello and Welcom shuvo
+
+
+Port mapping and Port publishing in container
+    -
+

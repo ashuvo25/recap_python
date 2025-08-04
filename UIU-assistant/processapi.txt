@@ -1,0 +1,37 @@
+Step 1: Prepare the Data
+Store all your UIU-related PDFs in a folder (e.g., dataPacks).
+
+Ensure they contain clean, readable content (skip scanned images unless OCR is applied).
+
+Step 2: Load the PDFs
+Use a PDF loader (like LangChain’s PyPDFLoader) to extract text from each PDF file.
+
+Step 3: Chunk the Text
+Split the extracted text into smaller chunks (e.g., 500–1000 characters) to make it suitable for embedding and retrieval.
+
+Step 4: Generate Embeddings
+Use an embedding model (like HuggingFace’s MiniLM or OpenAI embeddings) to convert each chunk into a vector.
+
+Step 5: Store in Vector Database
+Choose a vector store (like FAISS, ChromaDB, Pinecone, or Weaviate).
+
+Add all the chunks and their embeddings to the vector database.
+
+Step 6: Create a Retriever
+Set up a retriever from the vector DB to fetch relevant chunks based on user questions.
+
+Step 7: Set Up the Language Model
+Choose and configure a language model (e.g., OpenAI GPT, Claude, or a local LLM) to generate answers.
+
+Step 8: Connect Retriever and LLM
+Combine the retriever and the LLM into a RAG pipeline (using LangChain, LlamaIndex, or Haystack).
+
+The retriever fetches relevant chunks, and the LLM uses them to generate accurate answers.
+
+Step 9: Ask Questions
+Provide natural language queries.
+
+The RAG agent returns context-aware answers based on the embedded UIU PDFs.
+
+Step 10: (Optional) Deploy the Agent
+Use FastAPI, Streamlit, LangServe, or Gradio to create a web interface or API for users.
