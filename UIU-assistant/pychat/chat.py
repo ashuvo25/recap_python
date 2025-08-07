@@ -36,7 +36,7 @@ while True:
         break
     
     # Retrieve relevant chunks from Chroma
-    results = collection.query(query_texts=[user_question], n_results=5)
+    results = collection.query(query_texts=[user_question], n_results=10)
     retrieved_docs = "\n\n".join(results["documents"][0])
 
     if not retrieved_docs.strip():
@@ -47,6 +47,7 @@ while True:
     prompt = f"""
 You are a helpful assistant. Use the following context to answer the question.
 If you cannot find an exact answer, give the closest possible answer based on the context.
+Always tell the topic start date if user ask for.
 
 Context:
 {retrieved_docs}
@@ -57,7 +58,7 @@ Question:
 
     # Get answer from Groq LLM
     response = groq_client.chat.completions.create(
-        model="llama3-8b-8192",
+        model="openai/gpt-oss-120b",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.0
     )

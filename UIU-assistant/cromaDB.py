@@ -27,7 +27,7 @@ documents = loader.load()
 print(f"Loaded {len(documents)} documents")
 
 # Create chunks
-splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=50)
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = splitter.split_documents(documents)
 print(f"Split into {len(chunks)} chunks")
 
@@ -41,7 +41,7 @@ collection = client.get_or_create_collection(
     name="Uiu_agent",
     embedding_function=google_ef,
     metadata={
-        "description": "My first Chroma collection with Google embeddings",
+        "description": "pushing academid results to ChromaDB",
         "created": str(datetime.now())
     }
 )
